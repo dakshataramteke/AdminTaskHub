@@ -136,7 +136,7 @@ const Register = () => {
                 <button type="submit" className="btn btn-success mt-3 me-5">
                   Register
                 </button>
-                <Link to={"/login"} className="btn btn-primary mt-3">
+                <Link to={"/"} className="btn btn-primary mt-3">
                   Login
                 </Link>
               </div>

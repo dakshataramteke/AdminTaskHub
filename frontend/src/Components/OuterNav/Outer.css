@@ -1,0 +1,37 @@
+:root{
+    --blue:#0084A8;
+    --darkblue: #007498;
+}
+
+/* ==== Navbar ==== */
+.navbar-toggler{
+    box-shadow: none !important;
+    border: none !important;
+}
+
+
+/* ==== Login Page ==== */
+
+.login{
+    background-color: var(--blue);
+    height:calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .container{
+    /* border: 2px solid blue; */
+    width: 50%;
+    border-radius:10px;
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+.btn-primary{
+    background-color: var(--darkblue);
+    padding: 0.625rem 1.725rem;
+    border: none;
+}
+.btn-primary:hover{
+    background-color: var(--darkblue);
+}

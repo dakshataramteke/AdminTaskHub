@@ -1,14 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import SegmentIcon from '@mui/icons-material/Segment';
+import Login from './Login';
+import './Outer.css'; 
+
 const Navbar = () => {
   return (
     <>
       <header>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container">
-             <Link className="navbar-brand" to="/"> {/* Updated to */}
-              Navbar
-            </Link>
+             <NavLink className="navbar-brand" to="/" style={{color:'#007498', fontSize:'1.5rem'}}> 
+             AdminTaskHub
+            </NavLink>
             <button
               className="navbar-toggler"
               type="button"
@@ -18,17 +22,17 @@ const Navbar = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
+              <span><SegmentIcon/></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
+              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                {/* <li className="nav-item">
                   <Link className="nav-link active" aria-current="page" to="/login">
                   Login
                   </Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
-                  <Link className="nav-link" to="/register">
+                  <Link className="nav-link active" to="/register">
                  Register
                   </Link>
                 </li>
@@ -37,6 +41,7 @@ const Navbar = () => {
           </div>
         </nav>
       </header>
+      <Login/>
     </>
   );
 };

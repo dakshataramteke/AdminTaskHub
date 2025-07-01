@@ -12,3 +12,7 @@
 .form-control{
     box-shadow: none !important;
 }
+
+li{
+    list-style: none;
+}
