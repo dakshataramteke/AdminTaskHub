@@ -14,7 +14,7 @@ export const SideNav = [
   },
   {
     title: "Employee",
-    path: "/employee",
+    path: "/dashboard/employee",
     icon: <PeopleIcon />,
     cName: 'nav-text'
   },

@@ -4,6 +4,9 @@ import { BrowserRouter, Routes , Route } from 'react-router';
 import Login from './Components/OuterNav/Login';
 import Register from './Components/OuterNav/Register';
 import Dashboard from './Components/InnerNav/Dashboard';
+import Employee from './Components/InnerNav/Employee';
+import AddEmployee from './Components/InnerNav/AddEmployee';
+import EditEmployee from './Components/InnerNav/EditEmployee';
 function App() {
 
 
@@ -14,7 +17,11 @@ function App() {
         <Route path="/" element={   <Navbar/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/login" element={<Login/>} />
-        <Route path='/dashboard' element={<Dashboard/>}/>
+         <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="employee" element={<Employee/>} />
+            <Route path="add" element={<AddEmployee/>} />
+            <Route path="edit/:id" element={<EditEmployee/>} />
+          </Route>
       </Routes>
     </BrowserRouter>
 

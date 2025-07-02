@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import { SideNav } from './SideNav';
 import './Dashboard.css'
 import { IconContext } from 'react-icons';
@@ -16,9 +16,11 @@ function Navbar() {
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
           <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
+            <FaIcons.FaBars onClick={showSidebar} /> 
           </Link>
+           <h4 className='text-white mt-3 cmp_name'>AdminTechHub</h4>
         </div>
+          
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className='navbar-toggle'>
@@ -38,7 +40,9 @@ function Navbar() {
             })}
           </ul>
         </nav>
+          <Outlet/>
       </IconContext.Provider>
+    
     </>
   );
 }

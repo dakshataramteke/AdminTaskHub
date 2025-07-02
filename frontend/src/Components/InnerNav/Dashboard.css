@@ -2,28 +2,33 @@
 :root{
     --stealblue: #4682B4;
      --tealblue:#0084A8;
+     --tealgreen :#46AEB4;
 }
 
-
 .navbar{
-    background-color: #060b26;
-    height: 80px;
+    background-color: var(--stealblue);
+    height: 70px;
     display: flex;
     justify-content: start;
     align-items: start;
     padding-left: 2rem;
-    /* height: 100vh;
-    width: 280px; */
 }
 
-
+.cmp_name{
+    padding-left: 10rem;
+}
+@media(max-width:768px){
+    .cmp_name{
+        padding-left: 3rem;
+    }
+}
 .menu-bars{
     margin-left: 2rem;
     font-size: 2rem;
     background-color: none;
 }
 .nav-menu{
-    background-color: #060b26;
+    background-color:var(--stealblue);
     width: 250px;
     height: 100vh;
     position: fixed;
@@ -57,13 +62,13 @@
     border-radius: 4px;
 }
 .nav-text a:hover{
-    background-color: #1a83ff;
+    background-color: var(--tealgreen);
 }
 .nav-menu-items{
     width: 100%;
 }
 .navbar-toggle{
-    background-color: #060b26;
+    background-color: var(--stealblue);
     width: 100%;
     height: 80px;
     display: flex;
@@ -75,6 +80,8 @@ span{
 }
 
 
-
-
-/* Dashboard  */
+/* === Employee === */
+.btn-secondary{
+    background-color: var(--tealgreen);
+    border:none;
+}
