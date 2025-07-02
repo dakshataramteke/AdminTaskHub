@@ -41,6 +41,9 @@ Router.post("/login",async(req,res)=>{
     const email = req.body.email;
   
     const UserData = await Register.findOne({email});
+    if(!UserData && !req.body.password){
+        return res.json({status: "error", message: "Please enter email and password"});
+    }
     if(!UserData){
         return res.json({status:"error", message:"User not found"});
     }
