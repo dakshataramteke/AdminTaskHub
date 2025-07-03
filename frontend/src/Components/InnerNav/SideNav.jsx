@@ -20,7 +20,7 @@ export const SideNav = [
   },
   {
     title: "Project",
-    path: "/project",
+    path: "/dashboard/project",
     icon: <LibraryBooksIcon />,
     cName: 'nav-text'
   },

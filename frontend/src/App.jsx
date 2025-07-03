@@ -7,6 +7,8 @@ import Dashboard from './Components/InnerNav/Dashboard';
 import Employee from './Components/InnerNav/Employee';
 import AddEmployee from './Components/InnerNav/AddEmployee';
 import EditEmployee from './Components/InnerNav/EditEmployee';
+import Project from './Components/InnerNav/Project';
+import ProjectAssign from './Components/InnerNav/ProjectAssign';
 function App() {
 
 
@@ -21,6 +23,8 @@ function App() {
             <Route path="employee" element={<Employee/>} />
             <Route path="add" element={<AddEmployee/>} />
             <Route path="edit/:id" element={<EditEmployee/>} />
+            <Route path='project' element={<Project/>}/>
+            <Route path='project/pro/:id' element={<ProjectAssign />}/>
           </Route>
       </Routes>
     </BrowserRouter>
