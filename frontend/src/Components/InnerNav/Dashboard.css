@@ -5,26 +5,18 @@
      --tealgreen :#46AEB4;
 }
 
-.navbar{
+.dashboard .navbar{
     background-color: var(--stealblue);
     height: 70px;
     display: flex;
     justify-content: start;
-    align-items: start;
-    padding-left: 2rem;
+    align-items: center;
+    position: relative;
+    z-index:999;
 }
 
-.cmp_name{
-    padding-left: 10rem;
-}
-@media(max-width:768px){
-    .cmp_name{
-        padding-left: 3rem;
-    }
-}
 .menu-bars{
-    margin-left: 2rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     background-color: none;
 }
 .nav-menu{
@@ -66,6 +58,7 @@
 }
 .nav-menu-items{
     width: 100%;
+    padding-left:1rem;
 }
 .navbar-toggle{
     background-color: var(--stealblue);
@@ -84,4 +77,13 @@ span{
 .btn-secondary{
     background-color: var(--tealgreen);
     border:none;
+}
+/* Project  */
+
+/* === Assign Task ===  */
+.assign_task .form-control{
+    border-color: var(--tealblue) !important;
+}
+.line_Data{
+    border: 1px solid gray;
 }

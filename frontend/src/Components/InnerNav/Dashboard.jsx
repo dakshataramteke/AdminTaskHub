@@ -13,12 +13,13 @@ function Navbar() {
 
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
+    <section className='dashboard'>
+  <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
           <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} /> 
+            <FaIcons.FaBars onClick={showSidebar} style={{marginLeft:'1rem'}}/> 
           </Link>
-           <h4 className='text-white mt-3 cmp_name'>AdminTechHub</h4>
+           <h4 className='text-white ps-3 mb-0'>AdminTechHub</h4>
         </div>
           
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
@@ -42,6 +43,8 @@ function Navbar() {
         </nav>
           <Outlet/>
       </IconContext.Provider>
+    </section>
+    
     
     </>
   );

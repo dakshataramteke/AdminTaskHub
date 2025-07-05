@@ -8,7 +8,7 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 export const SideNav = [
   {
     title: "Home",
-    path: "/",
+    path: "/dashboard",
     icon: <HomeIcon />,
     cName: 'nav-text'
   },
@@ -26,7 +26,7 @@ export const SideNav = [
   },
   {
     title: "Task Manager",
-    path: "/task",
+    path: "/dashboard/taskmanager",
     icon: <AssignmentIcon />,
     cName: 'nav-text'
   },

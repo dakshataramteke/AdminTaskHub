@@ -9,6 +9,8 @@ import AddEmployee from './Components/InnerNav/AddEmployee';
 import EditEmployee from './Components/InnerNav/EditEmployee';
 import Project from './Components/InnerNav/Project';
 import ProjectAssign from './Components/InnerNav/ProjectAssign';
+import Assign from './Components/InnerNav/Assign';
+import TaskManager from './Components/InnerNav/TaskManager';
 function App() {
 
 
@@ -21,10 +23,12 @@ function App() {
         <Route path="/login" element={<Login/>} />
          <Route path="/dashboard" element={<Dashboard />}>
             <Route path="employee" element={<Employee/>} />
+            <Route path='employee/assign/:id' element={<Assign/>}/>
             <Route path="add" element={<AddEmployee/>} />
             <Route path="edit/:id" element={<EditEmployee/>} />
             <Route path='project' element={<Project/>}/>
             <Route path='project/pro/:id' element={<ProjectAssign />}/>
+            <Route path='taskmanager' element={<TaskManager/>}/>
           </Route>
       </Routes>
     </BrowserRouter>

@@ -59,6 +59,12 @@ const Employee = () => {
                           <td>{data.position}</td>
                           <td className="d-flex">
                             <Link
+                              to={`/dashboard/employee/assign/${data._id}`}
+                              className="btn btn-success ms-3"
+                            >
+                             Assign
+                            </Link>
+                            <Link
                               to={`/dashboard/edit/${data._id}`}
                               className="btn btn-secondary ms-3"
                             >
