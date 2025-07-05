@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import "./Dashboard.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import Project from "./Project";
-import TaskManager from "./TaskManager"; 
+import AllProject from "./AllProject";
 
 const Assign = () => {
   const { id } = useParams();
@@ -12,38 +11,49 @@ const Assign = () => {
   const [assignmentData, setAssignmentData] = useState(null);
 
   const fetchData = async () => {
+   try {
     const response = await axios.get(
       `http://localhost:5000/dashboard/editemployee/${id}`
     );
+    console.log(response.data); 
     setAssign(response.data.UserEmployee);
-  };
-
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
+  
   useEffect(() => {
     fetchData();
   }, []);
 
-   const taskAssign = () => {
+   const taskAssign = async() => {
     if (selectedProject) {
-      const assignmentData = {
-        employeeId: id,
-        employeefname : assign.fname,
-        employeelname : assign.lname,
-        projectCode: selectedProject.procode,
-        projectName: selectedProject.addpro,
-        startDate: selectedProject.sdate,
-        endDate: selectedProject.ldate,
-        customerName: selectedProject.customer,
+       const assignmentData = {
+        id: id,
+        fname : assign.fname,
+        lname : assign.lname,
+        procode: selectedProject.procode,
+        addpro: selectedProject.addpro,
+        sdate: selectedProject.sdate,
+        edate: selectedProject.edate,
+        customer: selectedProject.customer,
+        status: selectedProject.status,
+        assignedDate: new Date().toLocaleString(),
         
       };
-       const existingAssignments = JSON.parse(localStorage.getItem("assignments")) || [];
-         existingAssignments.push(assignmentData);
-        localStorage.setItem("assignments", JSON.stringify(existingAssignments));
 
-
-      console.log("Task Assigned with data:", assignmentData);
+       try {
+        console.log("Assignment Data", assignmentData)
+      const response = await axios.post('http://localhost:5000/project/assigntask', assignmentData);
+      console.log("Response from server:", response.data);
       alert("Task Successfully Assigned");
-       setAssignmentData(assignmentData);
-    } else {
+      setAssignmentData(assignmentData);
+    } catch (error) {
+      console.error("Error assigning task:", error);
+      alert("Failed to assign task. Please try again.");
+    }
+  }
+  else {
       alert("Please select a project before assigning.");
     }
   };
@@ -56,25 +66,6 @@ const Assign = () => {
     <>
       <section className="assign_task">
         <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <nav className="navbar navbar-light bg-light navbar-negative-z">
-                <div className="container-fluid">
-                  <form className="d-flex">
-                    <input
-                      className="form-control me-2"
-                      type="search"
-                      placeholder="Search by project Name"
-                      aria-label="Search"
-                    />
-                    <button className="btn btn-outline-success" type="submit">
-                      Search
-                    </button>
-                  </form>
-                </div>
-              </nav>
-            </div>
-          </div>
           <div className="row d-flex">
             <div className="my-3">
               {assign ? (
@@ -89,7 +80,7 @@ const Assign = () => {
             </div>
 
             <div className="col-12 col-md-6">
-              <Project onProjectSelect={handleProjectSelect} />
+              <AllProject onProjectSelect={handleProjectSelect} />
             </div>
 
             <div className="col-12 col-md-6 line_Data py-3" >
@@ -109,16 +100,24 @@ const Assign = () => {
               </tr>
                <tr>
               <td>Start Date:</td>
-              <td>{selectedProject.sdate}</td>
+              <td>{selectedProject.sdate ? new Date(selectedProject.sdate).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }) : 'N/A'}</td>
 
                </tr>
                 <tr>
                 <td>End Date:</td>
-                <td>{selectedProject.ldate}</td>
+              <td>{selectedProject.edate ? new Date(selectedProject.edate).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }) : 'N/A'}</td>
                 </tr>
                <tr>
                 <td>Customer Name:</td>
                 <td>{selectedProject.customer}</td>
+               </tr>
+               <tr>
+                <td>Status</td>
+                <td>{selectedProject.status}</td>
+               </tr>
+               <tr>
+                <td>Assigned Date :</td>
+                <td>{assignmentData ? assignmentData.assignedDate : 'Not assigned yet'}</td>
                </tr>
                </tbody>
                </table>
@@ -133,8 +132,7 @@ const Assign = () => {
               )}
             </div>
           </div>
-          {/* {assignmentData && <TaskManager assignmentData={assignmentData} />}  */}
-          {<TaskManager assignmentData={assignmentData} />} 
+          {/* {<TaskManager assignmentData={assignmentData} />}  */}
 
         </div>
       </section>

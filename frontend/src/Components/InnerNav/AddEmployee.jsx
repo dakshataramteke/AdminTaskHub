@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router";
 import { useNavigate } from "react-router";
 const AddEmployee = () => {
      let navigate = useNavigate();
@@ -15,7 +14,6 @@ const AddEmployee = () => {
 
   const changeData = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    // console.log(formData);
   };
 
   const handleSubmit = async (e) => {

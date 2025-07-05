@@ -72,13 +72,18 @@ span{
     margin-left: 16px;
 }
 
-
+/* Dashboard Data  */
+.pie{
+    border:5px solid red;
+    height:50px;
+    width:50px;
+    border-radius:50%;
+}
 /* === Employee === */
 .btn-secondary{
     background-color: var(--tealgreen);
     border:none;
 }
-/* Project  */
 
 /* === Assign Task ===  */
 .assign_task .form-control{

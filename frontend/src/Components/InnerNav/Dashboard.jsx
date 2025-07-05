@@ -44,8 +44,7 @@ function Navbar() {
           <Outlet/>
       </IconContext.Provider>
     </section>
-    
-    
+
     </>
   );
 }

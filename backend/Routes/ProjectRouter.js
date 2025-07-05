@@ -12,7 +12,7 @@ Router.post("/addproject",async(req,res)=>{
     const {procode,addpro,customer} = req.body;
     console.log(req.body);
     const addProject = new Project({ 
-       procode,addpro,customer
+       procode,addpro,customer, sdate, edate
        
      });
     const result = await addProject.save();
