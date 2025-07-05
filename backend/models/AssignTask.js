@@ -1,7 +1,15 @@
 const { required } = require('joi');
 const mongoose = require('mongoose');
 
-const ProjectSchema = new mongoose.Schema({
+const ProjectAssignSchema = new mongoose.Schema({
+  fname:{
+    type:String,
+    required:true
+  },
+  lname:{
+    type:String,
+    required:true
+  },
   procode:{
     type:String,
     required:true
@@ -24,12 +32,11 @@ const ProjectSchema = new mongoose.Schema({
   },
   status:{
     type:String,
-    // required:true
   },
   assignedDate:{
     type: Date
   }
 })
 
-const Project = mongoose.model('Project', ProjectSchema);
-module.exports = Project;
+const ProjectAssign = mongoose.model('ProjectAssign', ProjectAssignSchema);
+module.exports = ProjectAssign;
