@@ -49,13 +49,13 @@ const AddProject = () => {
   };
   return (
     <>
-      <section>
+      <section style={{backgroundColor:"#87b2d5"}} className="add_project">
         <div className="container">
           <form onSubmit={handleSubmit}>
            
-            <div className="row py-3">
+            <div className="row py-3 px-md-5 m-auto add_data" style={{ backgroundColor:"white"}}>
            <h3 className="text-center my-3">Add a Project </h3>
-              <div className="col-12 col-md-8 mt-3 offset-md-2">
+              <div className="col-12 mt-3 ">
                 <label className="form-label">Project Code</label>
                 <input
                   type="text"
@@ -67,7 +67,7 @@ const AddProject = () => {
                   className="form-control"
                 />
               </div>
-              <div className="col-12 col-md-8 mt-3 offset-md-2">
+              <div className="col-12 mt-3 ">
                 <label className="form-label"> Project Name</label>
                 <input
                   type="text"
@@ -79,7 +79,7 @@ const AddProject = () => {
                   className="form-control"
                 />
               </div>
-              <div className="col-12 col-md-8 mt-3 offset-md-2">
+              <div className="col-12 mt-3 ">
                 <label className="form-label">Customer</label>
                 <input
                   type="text"
@@ -116,7 +116,7 @@ const AddProject = () => {
                   />
                 </div>
                  </div>
-                <div className="col-12  mt-3 ">
+                <div className="col-12 mt-3 ">
                   <label className="form-label">Status</label>
                   <select
                     className="form-select"
@@ -131,8 +131,8 @@ const AddProject = () => {
                     <option value="completed">Completed</option>
                   </select>
                 </div>
-                <div className="d-flex justify-content-center">
-                   <button type="submit" className="btn btn-secondary mt-3">
+                <div className="d-flex justify-content-center mt-2">
+                   <button type="submit" className="btn btn-secondary my-3">
                   Add
                 </button>
                 </div>

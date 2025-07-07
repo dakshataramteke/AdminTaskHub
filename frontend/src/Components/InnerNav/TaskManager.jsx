@@ -20,9 +20,9 @@ const TaskManager = () => {
 
   return (
     <>
+    <section style={{height:'86vh'}}>
       <div className="container">
         <h4 className="my-4 text-center">Assigned Task Details</h4>
-
         <div className="table-responsive">
           <table className="table " style={{ border: "1px solid gray" }}>
             <thead>
@@ -91,6 +91,7 @@ const TaskManager = () => {
           </table>
         </div>
       </div>
+        </section>
     </>
   );
 };

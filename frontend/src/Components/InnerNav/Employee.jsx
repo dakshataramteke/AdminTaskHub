@@ -30,7 +30,7 @@ const Employee = () => {
   });
   return (
     <>
-      <section>
+      <section style={{height: "89vh"}}>
         <div className="container">
           <div className="row">
             <div className="col-md-12 col-md-6">

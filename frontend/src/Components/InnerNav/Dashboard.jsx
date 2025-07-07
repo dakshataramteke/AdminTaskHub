@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet,useLocation } from 'react-router-dom';
 import { SideNav } from './SideNav';
 import './Dashboard.css'
 import { IconContext } from 'react-icons';
+import DashboardData from './DashboardData';
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
-
+const location = useLocation();
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
@@ -44,7 +45,7 @@ function Navbar() {
           <Outlet/>
       </IconContext.Provider>
     </section>
-
+{location.pathname === "/dashboard" && <DashboardData />}
     </>
   );
 }

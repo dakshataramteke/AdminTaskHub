@@ -3,8 +3,11 @@
     --stealblue: #4682B4;
      --tealblue:#0084A8;
      --tealgreen :#46AEB4;
+     --lightblue: #87b2d5;
 }
-
+section{
+    background-color: #87b2d5;
+}
 .dashboard .navbar{
     background-color: var(--stealblue);
     height: 70px;
@@ -73,11 +76,38 @@ span{
 }
 
 /* Dashboard Data  */
-.pie{
-    border:5px solid red;
-    height:50px;
-    width:50px;
-    border-radius:50%;
+.dashboard_bar{
+    display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 1200px;
+      margin:0 auto;
+      padding: 20px;
+      /* height: 0 !important; */
+}
+.dashboard_bar .dashboard_data{
+     background-color: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.dashboard_bar p{
+    margin-bottom: 0 !important;
+}
+/* .Pie_chart{
+   width:60% !important;  
+} */
+
+.process, 
+.pending, 
+.completed{
+    width: 33%;
+}
+@media(max-width:768px){
+    .Pie_chart{
+        width: 100% !important;
+    }
+    
 }
 /* === Employee === */
 .btn-secondary{
@@ -91,4 +121,14 @@ span{
 }
 .line_Data{
     border: 1px solid gray;
+}
+
+/* Add Project  */
+.add_project .add_data{
+width: 60% !important;
+}
+@media(max-width:768px){
+   .add_project .row{
+width: 100% !important;
+} 
 }
